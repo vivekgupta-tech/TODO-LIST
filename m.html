@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<style>
+    .todoValue{
+        color:red;
+    }
+    input{
+        height: 30px;
+        width:50vh;
+        justify-content: center;
+        margin-left:22px;
+        margin-top: 10px;
+    }
+        .box{
+            height: 300px;;
+            width:70vh;
+            margin-top: 5vh;
+            margin-left: 60vh;
+        
+        }
+        .btn{
+            color:blue;
+            height: 35px;
+            
+        }
+        ol{
+            color:gold;
+            font-family: sans-serif;
+            font-size: large;
+        }
+        body{
+            background-image:url(./water\ fall1.jpeg) ;
+        }
+        h1{
+            margin-left: 22vh;
+            color:tomato
+        }
+</style>
+<body>
+<div class="box">
+    <h1>Todo List</h1>
+    <form>
+
+     <input type="text" class="todoValue"placeholder="Write Your Notes....">
+    
+   
+     <button class="btn">Add Todo</button>
+   <ol class="todoList"></ol> 
+</form>
+    <script>
+        const todoList = document.querySelector(".todoList");
+        const listValue = document.querySelector(".todoValue");
+
+        const addTodoList = (e) => {
+           
+           e.preventDefault(); 
+            const liElement = document.createElement("li");
+            liElement.textContent = listValue.value; 
+             todoList.appendChild(liElement); 
+        };
+        document.querySelector('.btn').addEventListener('click', (e) => {
+            addTodoList(e);
+        });
+    </script>
+</body>
+</html>
